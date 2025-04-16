@@ -1,0 +1,25 @@
+5. Развернуть отдельно 2 докер контейнера, 
+    (БЕЗ  docker-compose) и настроить сеть между ними,
+- 1ый контейнер - ваше приложение (на порту отличном от 80)
+- 2ой контейнер - база данных
+
+p.s. Вырезать парсер, 
+первый метод с url теперь просто записывает этот url 
+в базу данных, а второй метод возвращает все url, 
+которые есть в бд
+
+docker run -d \
+  --name my_postgres \
+  --network my_network \
+  -e POSTGRES_USER=artem \
+  -e POSTGRES_PASSWORD=12345678 \
+  -e POSTGRES_DB=mydb \
+  postgres
+
+
+docker run -d \
+  --name my_app_container \
+  --network my_network \
+  -p 8080:8000 \
+  app_1
+

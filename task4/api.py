@@ -16,9 +16,9 @@ from sqlalchemy import inspect
 app = FastAPI()
 
 #Settings of Data Base
-db_name = "artyom"
-db_user = "artyom"
-db_password = "123413v"
+db_name = "user"
+db_user = "user"
+db_password = "parol"
 db_host = "localhost"
 db_port = "5432"
 
