@@ -1,12 +1,8 @@
-
 from fastapi import FastAPI, Query
 from sqlalchemy import create_engine, text
 from sqlalchemy import inspect
 
-
 app = FastAPI()
-
-
 
 db_name = "mydb"
 db_user = "artem"
@@ -34,7 +30,7 @@ with engine.connect() as conn:
     else:
         conn.execute(text(create_table_query))
         conn.commit()
-        print("Table was created")
+        print("Table is created")
 
 @app.get("/")
 def home():

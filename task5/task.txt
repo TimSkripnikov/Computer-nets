@@ -8,6 +8,10 @@ p.s. Вырезать парсер,
 в базу данных, а второй метод возвращает все url, 
 которые есть в бд
 
+docker network create my_network
+docker network ls
+
+
 docker run -d \
   --name my_postgres \
   --network my_network \
